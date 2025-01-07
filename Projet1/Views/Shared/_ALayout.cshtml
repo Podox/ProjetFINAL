@@ -74,49 +74,34 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                            
-                          
-                                @if (Context.Session.GetString("UserEmail") != null)
-                                {
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link danger" onclick="submitLogoutForm(event)">Disconnect</a>
-                                    <form id="logout-form" asp-controller="Account" asp-action="Logout" method="post" style="display: none;">
-                                        @Html.AntiForgeryToken()
-                                    </form>
-                                </li>
-                               
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-controller="Entreprise" asp-action="AddEntreprise">Ajouter Une Entreprise</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-controller="Domiciliatione" asp-action="AddDomiciliatione">Faire une Demande</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-controller="Dashboard" asp-action="Index">Dasboard</a>
-                                </li>
-
-                                }
-                            else if (Context.Session.GetString("UserEmail") == null)
-                                {
-                                <li class="scroll"><a href="#works">Comment ça marche</a></li>
-                                <li class="scroll"><a href="#explore">Explorez</a></li>
-                                <li class="scroll"><a href="#reviews">Clients</a></li>
-            
-                                <li class=""><a asp-controller="Home" asp-action="Index">Home</a></li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-controller="Account" asp-action="Login">Sign In</a>
-                                    </li>
-                                }
-
-
-                            <script>
-                                function submitLogoutForm(event) {
-                                    event.preventDefault(); // Prevent the default link action
-                                    document.getElementById('logout-form').submit(); // Submit the hidden form
-                                }
-                            </script>
-
-                        </ul><!--/.nav -->
+                            <li class="nav-item">
+                                <a href="#" class="nav-link danger" onclick="submitLogoutForm(event)">Disconnect</a>
+                                <form id="logout-form" asp-controller="Account" asp-action="Logout" method="post" style="display: none;">
+                                    @Html.AntiForgeryToken()
+                                </form>
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <a href="@Url.Action("Index", "Adresses")" style="font-size: 18px;">Adresses</a>
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <a href="@Url.Action("Index", "Domiciliationes")" style="font-size: 18px;">Domiciliationes</a>
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <a href="@Url.Action("Index", "Entreprises")" style="font-size: 18px;">Entreprises</a>
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <a href="@Url.Action("Index", "Factures")" style="font-size: 18px;">Factures</a>
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <a href="@Url.Action("Index", "Utilisateurs")" style="font-size: 18px;">Utilisateurs</a>
+                            </li>
+                        </ul>
+                        <script>
+                            function submitLogoutForm(event) {
+                                event.preventDefault(); // Prevent the default link action
+                                document.getElementById('logout-form').submit(); // Submit the hidden form
+                            }
+                        </script>
                     </div><!-- /.navbar-collapse -->
                 </div><!--/.container-->
             </nav><!--/nav-->
@@ -145,49 +130,34 @@
                     </div>
                     <div class="col-sm-9">
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-
-
-                            @if (Context.Session.GetString("UserEmail") != null)
-                            {
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link danger" onclick="submitLogoutForm(event)">Disconnect</a>
-                                    <form id="logout-form" asp-controller="Account" asp-action="Logout" method="post" style="display: none;">
-                                        @Html.AntiForgeryToken()
-                                    </form>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-controller="Entreprise" asp-action="AddEntreprise">Ajouter Une Entreprise</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-controller="Domiciliatione" asp-action="AddDomiciliatione">Faire une Demande</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-controller="Dashboard" asp-action="Index">Dasboard</a>
-                                </li>
-
+                            <li class="nav-item">
+                                <a href="#" class="nav-link danger" onclick="submitLogoutForm(event)">Disconnect</a>
+                                <form id="logout-form" asp-controller="Account" asp-action="Logout" method="post" style="display: none;">
+                                    @Html.AntiForgeryToken()
+                                </form>
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <a href="@Url.Action("Index", "Adresses")" style="font-size: 18px;">Adresses</a>
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <a href="@Url.Action("Index", "Domiciliationes")" style="font-size: 18px;">Domiciliationes</a>
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <a href="@Url.Action("Index", "Entreprises")" style="font-size: 18px;">Entreprises</a>
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <a href="@Url.Action("Index", "Factures")" style="font-size: 18px;">Factures</a>
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <a href="@Url.Action("Index", "Utilisateurs")" style="font-size: 18px;">Utilisateurs</a>
+                            </li>
+                        </ul>
+                        <script>
+                            function submitLogoutForm(event) {
+                                event.preventDefault(); // Prevent the default link action
+                                document.getElementById('logout-form').submit(); // Submit the hidden form
                             }
-                            else if (Context.Session.GetString("UserEmail") == null)
-                            {
-                                <li class="scroll"><a href="#works">Comment ça marche</a></li>
-                                <li class="scroll"><a href="#explore">Explorez</a></li>
-                                <li class="scroll"><a href="#reviews">Clients</a></li>
-
-                                <li class=""><a asp-controller="Home" asp-action="Index">Home</a></li>
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-controller="Account" asp-action="Login">Sign In</a>
-                                </li>
-                            }
-
-
-                            <script>
-                                function submitLogoutForm(event) {
-                                    event.preventDefault(); // Prevent the default link action
-                                    document.getElementById('logout-form').submit(); // Submit the hidden form
-                                }
-                            </script>
-
-                        </ul><!--/.nav -->
+                        </script>
                     </div>
                 </div>
             </div>

@@ -22,6 +22,14 @@ namespace Projet1.Controllers
         // GET: Utilisateurs
         public async Task<IActionResult> Index()
         {
+            // Check if the current user is "admin"
+            var currentUser = HttpContext.Session.GetString("Username");
+
+            if (currentUser != "admin")
+            {
+                // Redirect to a different page if the user is not admin
+                return RedirectToAction("AccessDenied", "Home");
+            }
             return View(await _context.Utilisateur.ToListAsync());
         }
 

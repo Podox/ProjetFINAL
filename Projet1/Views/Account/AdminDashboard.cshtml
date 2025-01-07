@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+    Layout = "_ALayout"; 
+}
+
+<div style="text-align:center; padding-top: 50px;">
+    <h2>Admin Dashboard</h2>
+    <p>Welcome to the admin dashboard. Choose an option below:</p>
+
+    <div style="margin-top: 30px;">
+        <a href="@Url.Action("Index", "Adresses")" style="font-size: 18px; display:block; margin-bottom: 10px;">Adresses</a>
+        <a href="@Url.Action("Index", "Domiciliationes")" style="font-size: 18px; display:block; margin-bottom: 10px;">Domiciliationes</a>
+        <a href="@Url.Action("Index", "Entreprises")" style="font-size: 18px; display:block; margin-bottom: 10px;">Entreprises</a>
+        <a href="@Url.Action("Index", "Factures")" style="font-size: 18px; display:block; margin-bottom: 10px;">Factures</a>
+        <a href="@Url.Action("Index", "Utilisateurs")" style="font-size: 18px; display:block; margin-bottom: 10px;">Utilisateurs</a>
+    </div>
+</div>

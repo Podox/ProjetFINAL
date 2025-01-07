@@ -58,7 +58,16 @@ public class AccountController : Controller
         {
             // Store user email or other relevant info in session
             HttpContext.Session.SetString("UserEmail", utilisateur.Email);
+
             HttpContext.Session.SetString("UserId", utilisateur.Id.ToString());
+
+            HttpContext.Session.SetString("Username", utilisateur.Nom);
+            if (utilisateur.Email == "badramripodoxadmin@gmail.com")
+            {
+                // Redirect to a different view if the user is this specific admin
+              
+                return View("~/Views/Account/AdminDashboard.cshtml");
+            }
             // Redirect to the Home page after successful login
             return RedirectToAction("Index", "Home");
         }

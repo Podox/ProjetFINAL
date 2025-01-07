@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -22,6 +21,14 @@ namespace Projet1.Controllers
         // GET: Factures
         public async Task<IActionResult> Index()
         {
+            // Check if the current user is "admin"
+            var currentUser = HttpContext.Session.GetString("Username");
+
+            if (currentUser != "admin")
+            {
+                // Redirect to a different page if the user is not admin
+                return RedirectToAction("AccessDenied", "Home");
+            }
             return View(await _context.Facture.ToListAsync());
         }
 
@@ -46,12 +53,12 @@ namespace Projet1.Controllers
         // GET: Factures/Create
         public IActionResult Create()
         {
+            // Populate the dropdown with available Entreprises
+            ViewData["EntrepriseAssocieeId"] = new SelectList(_context.Entreprise, "Id", "Nom");
             return View();
         }
 
         // POST: Factures/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,DateEmission,DateEcheance,MontantTotal,EstPayee,EntrepriseAssocieeId")] Facture facture)
@@ -62,6 +69,9 @@ namespace Projet1.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
+            // Repopulate the dropdown in case of validation failure
+            ViewData["EntrepriseAssocieeId"] = new SelectList(_context.Entreprise, "Id", "Nom", facture.EntrepriseAssocieeId);
             return View(facture);
         }
 
@@ -78,12 +88,13 @@ namespace Projet1.Controllers
             {
                 return NotFound();
             }
+
+            // Populate the dropdown with available Entreprises
+            ViewData["EntrepriseAssocieeId"] = new SelectList(_context.Entreprise, "Id", "Nom", facture.EntrepriseAssocieeId);
             return View(facture);
         }
 
         // POST: Factures/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,DateEmission,DateEcheance,MontantTotal,EstPayee,EntrepriseAssocieeId")] Facture facture)
@@ -113,6 +124,9 @@ namespace Projet1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
+            // Repopulate the dropdown in case of validation failure
+            ViewData["EntrepriseAssocieeId"] = new SelectList(_context.Entreprise, "Id", "Nom", facture.EntrepriseAssocieeId);
             return View(facture);
         }
 

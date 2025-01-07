@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Edit";
+    Layout = "_ALayout";
 }
 
 <h1>Edit</h1>
@@ -30,9 +31,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="EstPayee" class="control-label"></label>
-                <input asp-for="EstPayee" class="form-control" />
+                <select asp-for="EstPayee" class="form-control">
+                    <option value="">-- Select --</option>
+                    <option value="true">Paid</option>
+                    <option value="false">Not Paid</option>
+                </select>
                 <span asp-validation-for="EstPayee" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="EntrepriseAssocieeId" class="control-label"></label>
                 <input asp-for="EntrepriseAssocieeId" class="form-control" />

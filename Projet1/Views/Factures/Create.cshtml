@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = "_ALayout";
 }
 
 <h1>Create</h1>
@@ -29,13 +30,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="EstPayee" class="control-label"></label>
-                <input asp-for="EstPayee" class="form-control" />
+                <select asp-for="EstPayee" class="form-control">
+                    <option value="">-- Select --</option>
+                    <option value="true">Paid</option>
+                    <option value="false">Not Paid</option>
+                </select>
                 <span asp-validation-for="EstPayee" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="EntrepriseAssocieeId" class="control-label"></label>
-                <input asp-for="EntrepriseAssocieeId" class="form-control" />
-                <span asp-validation-for="EntrepriseAssocieeId" class="text-danger"></span>
+                <label for="EntrepriseAssocieeId">Entreprise</label>
+                <select asp-for="EntrepriseAssocieeId" class="form-control" asp-items="ViewBag.EntrepriseAssocieeId"></select>
+
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

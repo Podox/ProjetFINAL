@@ -1,0 +1,127 @@
+﻿@model Projet1.Models.DashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "_Layout"; // Ensure a shared layout is applied
+}
+
+<main class="container my-4">
+    <h1 class="text-center mb-4">Dashboard</h1>
+
+    <!-- Utilisateur Details Section -->
+    <div class="col-12 col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header text-white">
+                <h5 class="mb-0 fs-3">Utilisateur Details</h5>
+            </div>
+            <div class="card-body fs-4">
+                <p><strong>Name:</strong> @Model.Utilisateur.Nom @Model.Utilisateur.Prenom</p>
+                <p><strong>Email:</strong> @Model.Utilisateur.Email</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Entreprise Section -->
+    <div class="col-12 col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="mb-0 fs-3">Entreprise</h5>
+            </div>
+            <div class="card-body fs-4">
+                <p><strong>Company Name:</strong> @Model.Entreprise.Nom</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Factures Section -->
+    <div class="col-12">
+        <div class="card shadow-sm">
+            <div class="card-header text-white">
+                <h5 class="mb-0 fs-3">Factures</h5>
+            </div>
+            <div class="card-body fs-4">
+                @if (Model.Factures.Any())
+                {
+                    <ul class="list-group">
+                        @foreach (var facture in Model.Factures)
+                        {
+                            <li class="list-group-item d-flex justify-content-between align-items-center fs-5">
+                                <span>
+                                    @if (facture.DateEmission.HasValue)
+                                    {
+                                        <span class="badge bg-info me-2">@facture.DateEmission.Value.ToString("d")</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-warning text-dark me-2">No Date</span>
+                                    }
+                                </span>
+                                <span>
+                                    @if (facture.MontantTotal.HasValue)
+                                    {
+                                        @facture.MontantTotal.Value.ToString("C")
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-danger">No Amount</span>
+                                    }
+                                </span>
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p class="text-muted">No factures available.</p>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Domiciliationes Section -->
+    <div class="col-12">
+        <div class="card shadow-sm">
+            <div class="card-header text-dark">
+                <h5 class="mb-0 fs-3">Domiciliationes</h5>
+            </div>
+            <div class="card-body fs-4">
+                @if (Model.Domiciliationes.Any())
+                {
+                    <ul class="list-group">
+                        @foreach (var domiciliation in Model.Domiciliationes)
+                        {
+                            var adresse = Model.Adresses.FirstOrDefault(a => a.Id == domiciliation.idAdresseDomiciliation);
+                            <li class="list-group-item d-flex justify-content-between align-items-center fs-5">
+                                <span>
+                                    @adresse?.Rue, @adresse?.Ville, @adresse?.CodePostal
+                                </span>
+                                <span>
+                                    @switch (domiciliation.etat)
+                                    {
+                                        case 0:
+                                            <span class="badge bg-secondary">En attente</span>
+                                            break;
+                                        case 1:
+                                            <span class="badge bg-success">Confirmé</span>
+                                            break;
+                                        case 2:
+                                            <span class="badge bg-danger">Annulé</span>
+                                            break;
+                                        default:
+                                            <span class="badge bg-dark">Unknown</span>
+                                            break;
+                                    }
+                                </span>
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p class="text-muted">No domiciliationes available.</p>
+                }
+            </div>
+        </div>
+    </div>
+    </div>
+</main>

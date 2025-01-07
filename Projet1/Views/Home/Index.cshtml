@@ -1,18 +1,58 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Page d'Accueil";
 }
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flaticon/flaticon.css">
 
 <!-- Welcome-Hero Start -->
 <section id="home" class="welcome-hero">
     <div class="container">
         <div class="welcome-hero-txt">
-            <h2>Best place to find and explore <br> all that you need</h2>
-            <p>Find the best places, restaurants, hotels, real estate, and more in just one click.</p>
+            <h2>La meilleure solution pour domicilier <br> et gérer votre entreprise</h2>
+            <p>Obtenez une adresse prestigieuse, gérez votre courrier, et simplifiez vos démarches administratives en un clic.</p>
         </div>
-       
     </div>
 </section>
 <!-- Welcome-Hero End -->
+<!-- Statistics Start -->
+<section id="statistics" class="statistics">
+    <div class="container">
+        <div class="statistics-counter">
+            <div class="col-md-3 col-sm-6">
+                <div class="single-ststistics-box">
+                    <div class="statistics-content">
+                        <div class="counter">200</div> <span>+</span>
+                    </div>
+                    <h3>Adresses disponibles</h3>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="single-ststistics-box">
+                    <div class="statistics-content">
+                        <div class="counter">500</div> <span>+</span>
+                    </div>
+                    <h3>Clients satisfaits</h3>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="single-ststistics-box">
+                    <div class="statistics-content">
+                        <div class="counter">50</div> <span>+</span>
+                    </div>
+                    <h3>Partenaires</h3>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="single-ststistics-box">
+                    <div class="statistics-content">
+                        <div class="counter">10</div> <span>+</span>
+                    </div>
+                    <h3>Ans d'expérience</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Statistics End -->
 <!-- List-Topics Start -->
 <section id="list-topics" class="list-topics">
     <div class="container">
@@ -21,12 +61,49 @@
                 <li>
                     <div class="single-list-topics-content">
                         <div class="single-list-topics-icon">
-                            <i class="flaticon-restaurant"></i>
+                            <i class="flaticon-building"></i>
                         </div>
-                        <h2><a asp-controller="Category" asp-action="Index" asp-route-category="restaurant">Restaurant</a></h2>
-                        <p>150 listings</p>
+                        <h2><a asp-controller="Category" asp-action="Index" asp-route-category="domiciliation">Domiciliation</a></h2>
+                        <p>Plus de 200 adresses disponibles</p>
                     </div>
                 </li>
+                <li>
+                    <div class="single-list-topics-content">
+                        <div class="single-list-topics-icon">
+                            <i class="flaticon-building"></i>
+                        </div>
+                        <h2><a asp-controller="Category" asp-action="Index" asp-route-category="courrier">Gestion de Courrier</a></h2>
+                        <p>Recevez et gérez votre courrier en toute simplicité</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="single-list-topics-content">
+                        <div class="single-list-topics-icon">
+                            <i class="flaticon-building"></i>
+                        </div>
+                        <h2><a asp-controller="Category" asp-action="Index" asp-route-category="salle-reunion">Salles de Réunion</a></h2>
+                        <p>Réservez des salles modernes et équipées</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="single-list-topics-content">
+                        <div class="single-list-topics-icon">
+                            <i class="flaticon-building"></i>
+                        </div>
+                        <h2><a asp-controller="Category" asp-action="Index" asp-route-category="assistance-juridique">Assistance Juridique</a></h2>
+                        <p>Bénéficiez de conseils juridiques pour vos démarches</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="single-list-topics-content">
+                        <div class="single-list-topics-icon">
+                            <i class="flaticon-building"></i>
+                        </div>
+                        <h2><a asp-controller="Category" asp-action="Index" asp-route-category="bureau-partage">Bureaux Partagés</a></h2>
+                        <p>Travaillez dans un environnement collaboratif</p>
+                    </div>
+                </li>
+             
             </ul>
         </div>
     </div>
@@ -36,19 +113,42 @@
 <section id="works" class="works">
     <div class="container">
         <div class="section-header">
-            <h2>How It Works</h2>
-            <p>Learn more about how our website works</p>
+            <h2>Comment ça marche</h2>
+            <p>Découvrez comment notre service simplifie vos démarches</p>
         </div>
         <div class="works-content">
             <div class="row">
+                <!-- Step 1 -->
                 <div class="col-md-4 col-sm-6">
                     <div class="single-how-works">
                         <div class="single-how-works-icon">
-                            <i class="flaticon-lightbulb-idea"></i>
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <h2><a href="#">Choose <span>What To</span> Do</a></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed do eiusmod tempor incididunt ut labore magna aliqua.</p>
-                        <button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">Read More</button>
+                        <h2><a href="#">Choisissez <span>Votre</span> Adresse</a></h2>
+                        <p>Explorez nos adresses et sélectionnez celle qui convient le mieux à votre entreprise.</p>
+                        <button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">En savoir plus</button>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-how-works">
+                        <div class="single-how-works-icon">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <h2><a href="#">Complétez <span>Vos</span> Documents</a></h2>
+                        <p>Soumettez les documents nécessaires en ligne pour activer votre domiciliation.</p>
+                        <button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">En savoir plus</button>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-how-works">
+                        <div class="single-how-works-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h2><a href="#">Gérez <span>Votre</span> Courrier</a></h2>
+                        <p>Recevez vos courriers à votre nouvelle adresse et accédez à nos services de gestion postale.</p>
+                        <button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">En savoir plus</button>
                     </div>
                 </div>
             </div>
@@ -60,56 +160,56 @@
 <section id="explore" class="explore">
     <div class="container">
         <div class="section-header">
-            <h2>Explore</h2>
-            <p>Explore new places, food, culture around the world, and more.</p>
+            <h2>Explorez nos services</h2>
+            <p>Domiciliation, gestion de courrier, et bien plus pour votre entreprise.</p>
         </div>
         <div class="explore-content">
             <div class="row">
+                <!-- Service 1 -->
                 <div class="col-md-4 col-sm-6">
                     <div class="single-explore-item">
                         <div class="single-explore-img">
-                            <img src="@Url.Content("~/assets/images/explore/e1.jpg")" alt="explore image">
+                            <img src="@Url.Content("~/assets/images/explore/e1.jpeg")" alt="Domiciliation">
                             <div class="single-explore-img-info">
-                                <button onclick="window.location.href='#'">Best Rated</button>
-                                <div class="single-explore-image-icon-box">
-                                    <ul>
-                                        <li><div class="single-explore-image-icon"><i class="fa fa-arrows-alt"></i></div></li>
-                                        <li><div class="single-explore-image-icon"><i class="fa fa-bookmark-o"></i></div></li>
-                                    </ul>
-                                </div>
+                                <button onclick="window.location.href='#'">En Savoir Plus</button>
                             </div>
                         </div>
                         <div class="single-explore-txt bg-theme-1">
-                            <h2><a href="#">Tommy Helfinger Bar</a></h2>
-                            <p class="explore-rating-price">
-                                <span class="explore-rating">5.0</span> <a href="#">10 ratings</a>
-                                <span class="explore-price-box">From <span class="explore-price">$5-$300</span></span>
-                                <a href="#">Restaurant</a>
-                            </p>
-                            <div class="explore-person">
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                        <div class="explore-person-img">
-                                            <a href="#"><img src="@Url.Content("~/assets/images/explore/person.png")" alt="person"></a>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-                                    </div>
-                                </div>
+                            <h2><a href="#">Adresse de Prestige</a></h2>
+                            <p>Obtenez une adresse professionnelle pour renforcer l'image de votre entreprise.</p>
+                            <button class="explore-btn" onclick="window.location.href='#'">Découvrir</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-explore-item">
+                        <div class="single-explore-img">
+                            <img src="@Url.Content("~/assets/images/explore/e2.jpeg")" alt="Gestion de Courrier">
+                            <div class="single-explore-img-info">
+                                <button onclick="window.location.href='#'">En Savoir Plus</button>
                             </div>
-                            <div class="explore-open-close-part">
-                                <div class="row">
-                                    <div class="col-sm-5"><button class="close-btn" onclick="window.location.href='#'">Close Now</button></div>
-                                    <div class="col-sm-7">
-                                        <div class="explore-map-icon">
-                                            <a href="#"><i data-feather="map-pin"></i></a>
-                                            <a href="#"><i data-feather="upload"></i></a>
-                                            <a href="#"><i data-feather="heart"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="single-explore-txt bg-theme-2">
+                            <h2><a href="#">Gestion de Courrier</a></h2>
+                            <p>Recevez, scannez, et gérez vos courriers directement en ligne.</p>
+                            <button class="explore-btn" onclick="window.location.href='#'">Découvrir</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-explore-item">
+                        <div class="single-explore-img">
+                            <img src="@Url.Content("~/assets/images/explore/e3.jpg")" alt="Salles de Réunion">
+                            <div class="single-explore-img-info">
+                                <button onclick="window.location.href='#'">En Savoir Plus</button>
                             </div>
+                        </div>
+                        <div class="single-explore-txt bg-theme-3">
+                            <h2><a href="#">Salles de Réunion</a></h2>
+                            <p>Réservez des espaces modernes et entièrement équipés pour vos réunions et événements.</p>
+                            <button class="explore-btn" onclick="window.location.href='#'">Découvrir</button>
                         </div>
                     </div>
                 </div>
@@ -118,23 +218,25 @@
     </div>
 </section>
 <!-- Explore End -->
-<!--reviews start -->
+<!-- Reviews Start -->
+<!-- Reviews Start -->
 <section id="reviews" class="reviews">
     <div class="section-header">
-        <h2>clients reviews</h2>
-        <p>What our client say about us</p>
-    </div><!--/.section-header-->
+        <h2>Ce que disent nos clients</h2>
+        <p>Découvrez les témoignages de nos clients satisfaits</p>
+    </div>
     <div class="reviews-content">
         <div class="testimonial-carousel">
+            <!-- Review 1 -->
             <div class="single-testimonial-box">
                 <div class="testimonial-description">
                     <div class="testimonial-info">
                         <div class="testimonial-img">
-                            <img src="@Url.Content("~/assets/images/clients/c1.png")" alt="clients">
-                        </div><!--/.testimonial-img-->
+                            <img src="@Url.Content("~/assets/images/clients/c1.png")" alt="Jean Dupont">
+                        </div>
                         <div class="testimonial-person">
-                            <h2>Tom Leakar</h2>
-                            <h4>london, UK</h4>
+                            <h2>Jean Dupont</h2>
+                            <h4>Paris, France</h4>
                             <div class="testimonial-person-star">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -142,55 +244,119 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </div>
-                        </div><!--/.testimonial-person-->
-                    </div><!--/.testimonial-info-->
+                        </div>
+                    </div>
                     <div class="testimonial-comment">
                         <p>
-                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.
+                            "Un service irréprochable ! Grâce à eux, mon entreprise bénéficie d'une adresse prestigieuse et d'une gestion simplifiée."
                         </p>
-                    </div><!--/.testimonial-comment-->
-                </div><!--/.testimonial-description-->
-            </div><!--/.single-testimonial-box-->
-</section><!--/.reviews-->
-<!--reviews end -->
-<!-- statistics strat -->
-<section id="statistics" class="statistics">
-    <div class="container">
-        <div class="statistics-counter">
-            <div class="col-md-3 col-sm-6">
-                <div class="single-ststistics-box">
-                    <div class="statistics-content">
-                        <div class="counter">90 </div> <span>K+</span>
-                    </div><!--/.statistics-content-->
-                    <h3>listings</h3>
-                </div><!--/.single-ststistics-box-->
-            </div><!--/.col-->
-            <div class="col-md-3 col-sm-6">
-                <div class="single-ststistics-box">
-                    <div class="statistics-content">
-                        <div class="counter">40</div> <span>k+</span>
-                    </div><!--/.statistics-content-->
-                    <h3>listing categories</h3>
-                </div><!--/.single-ststistics-box-->
-            </div><!--/.col-->
-            <div class="col-md-3 col-sm-6">
-                <div class="single-ststistics-box">
-                    <div class="statistics-content">
-                        <div class="counter">65</div> <span>k+</span>
-                    </div><!--/.statistics-content-->
-                    <h3>visitors</h3>
-                </div><!--/.single-ststistics-box-->
-            </div><!--/.col-->
-            <div class="col-md-3 col-sm-6">
-                <div class="single-ststistics-box">
-                    <div class="statistics-content">
-                        <div class="counter">50</div> <span>k+</span>
-                    </div><!--/.statistics-content-->
-                    <h3>happy clients</h3>
-                </div><!--/.single-ststistics-box-->
-            </div><!--/.col-->
-        </div><!--/.statistics-counter-->
-    </div><!--/.container-->
-
-</section><!--/.counter-->
-<!-- statistics end -->
+                    </div>
+                </div>
+            </div>
+            <!-- Review 2 -->
+            <div class="single-testimonial-box">
+                <div class="testimonial-description">
+                    <div class="testimonial-info">
+                        <div class="testimonial-img">
+                            <img src="@Url.Content("~/assets/images/clients/c2.png")" alt="Sophie Martin">
+                        </div>
+                        <div class="testimonial-person">
+                            <h2>Sophie Martin</h2>
+                            <h4>Lyon, France</h4>
+                            <div class="testimonial-person-star">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-comment">
+                        <p>
+                            "L'équipe est très professionnelle et réactive. Je recommande vivement leurs services à tous les entrepreneurs."
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Review 3 -->
+            <div class="single-testimonial-box">
+                <div class="testimonial-description">
+                    <div class="testimonial-info">
+                        <div class="testimonial-img">
+                            <img src="@Url.Content("~/assets/images/clients/c3.png")" alt="Ahmed Benali">
+                        </div>
+                        <div class="testimonial-person">
+                            <h2>Ahmed Benali</h2>
+                            <h4>Casablanca, Maroc</h4>
+                            <div class="testimonial-person-star">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-comment">
+                        <p>
+                            "Un excellent rapport qualité-prix. Leur service de domiciliation est une vraie solution pour mon entreprise."
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="single-testimonial-box">
+                <div class="testimonial-description">
+                    <div class="testimonial-info">
+                        <div class="testimonial-img">
+                            <img src="@Url.Content("~/assets/images/clients/c3.png")" alt="Ahmed Benali">
+                        </div>
+                        <div class="testimonial-person">
+                            <h2>Ahmed Benali</h2>
+                            <h4>Casablanca, Maroc</h4>
+                            <div class="testimonial-person-star">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-comment">
+                        <p>
+                            "Un excellent rapport qualité-prix. Leur service de domiciliation est une vraie solution pour mon entreprise."
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="single-testimonial-box">
+                <div class="testimonial-description">
+                    <div class="testimonial-info">
+                        <div class="testimonial-img">
+                            <img src="@Url.Content("~/assets/images/clients/c3.png")" alt="Ahmed Benali">
+                        </div>
+                        <div class="testimonial-person">
+                            <h2>Ahmed Benali</h2>
+                            <h4>Casablanca, Maroc</h4>
+                            <div class="testimonial-person-star">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-comment">
+                        <p>
+                            "Un excellent rapport qualité-prix. Leur service de domiciliation est une vraie solution pour mon entreprise."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Reviews End -->
+<!-- Reviews End -->
