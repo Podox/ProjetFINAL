@@ -45,7 +45,8 @@ namespace Projet1.Controllers
                         idAdresseDomiciliation = idAdresseDomiciliation,
                         idDocument = null, // Leave null as requested
                         DateDebut = DateDebut,
-                        DateFin = DateFin
+                        DateFin = DateFin,
+                        etat = 0
                     };
 
                     // Save the new Domiciliatione to the database

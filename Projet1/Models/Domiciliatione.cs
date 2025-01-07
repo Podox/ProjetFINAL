@@ -13,6 +13,7 @@ namespace Projet1.Models
         public int? idAdresseDomiciliation { get; set; }
         public DateTime? DateDebut { get; set; }
         public DateTime? DateFin { get; set; }
+        public int? etat { get; set; }
 
 
     }

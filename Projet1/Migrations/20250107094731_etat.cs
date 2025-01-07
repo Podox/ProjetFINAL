@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Projet1.Migrations
 {
     /// <inheritdoc />
-    public partial class first : Migration
+    public partial class etat : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -38,7 +38,8 @@ namespace Projet1.Migrations
                     idDocument = table.Column<int>(type: "int", nullable: true),
                     idAdresseDomiciliation = table.Column<int>(type: "int", nullable: true),
                     DateDebut = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    DateFin = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    DateFin = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    etat = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

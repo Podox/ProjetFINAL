@@ -12,8 +12,8 @@ using Projet1.Data;
 namespace Projet1.Migrations
 {
     [DbContext(typeof(Projet1Context))]
-    [Migration("20250106214537_first")]
-    partial class first
+    [Migration("20250107094731_etat")]
+    partial class etat
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -66,6 +66,9 @@ namespace Projet1.Migrations
 
                     b.Property<DateTime?>("DateFin")
                         .HasColumnType("datetime2");
+
+                    b.Property<int?>("etat")
+                        .HasColumnType("int");
 
                     b.Property<int?>("idAdresseDomiciliation")
                         .HasColumnType("int");

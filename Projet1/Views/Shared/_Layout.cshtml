@@ -82,8 +82,14 @@
                                         @Html.AntiForgeryToken()
                                     </form>
                                 </li>
-                                <li class="scroll"><a href="#works">Ajouter Une Entreprise</a></li>
-                                <li class="scroll"><a href="#explore">Faire une Demande</a></li>
+                               
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Entreprise" asp-action="AddEntreprise">Ajouter Une Entreprise</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Domiciliatione" asp-action="AddDomiciliatione">Faire une Demande</a>
+                                </li>
+
                                 }
                             else if (Context.Session.GetString("UserEmail") == null)
                                 {

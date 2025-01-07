@@ -54,7 +54,7 @@ namespace Projet1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,idUtilisateur,idDocument,idAdresseDomiciliation,DateDebut,DateFin")] Domiciliatione domiciliatione)
+        public async Task<IActionResult> Create([Bind("Id,idUtilisateur,idDocument,idAdresseDomiciliation,DateDebut,DateFin,etat")] Domiciliatione domiciliatione)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Projet1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,idUtilisateur,idDocument,idAdresseDomiciliation,DateDebut,DateFin")] Domiciliatione domiciliatione)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,idUtilisateur,idDocument,idAdresseDomiciliation,DateDebut,DateFin,etat")] Domiciliatione domiciliatione)
         {
             if (id != domiciliatione.Id)
             {

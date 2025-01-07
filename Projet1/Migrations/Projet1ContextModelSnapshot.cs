@@ -64,6 +64,9 @@ namespace Projet1.Migrations
                     b.Property<DateTime?>("DateFin")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("etat")
+                        .HasColumnType("int");
+
                     b.Property<int?>("idAdresseDomiciliation")
                         .HasColumnType("int");
 
