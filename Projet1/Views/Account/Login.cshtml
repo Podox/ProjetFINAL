@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="text-center">Login</h2>
+                <form asp-action="Login" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <!-- Email Input -->
+                    <div class="form-group">
+                        <label for="Email" class="control-label">Email</label>
+                        <input type="email" name="email" class="form-control" placeholder="Enter your email" required />
+                    </div>
+
+                    <!-- Password Input -->
+                    <div class="form-group">
+                        <label for="MotDePasse" class="control-label">Password</label>
+                        <input type="password" name="motDePasse" class="form-control" placeholder="Enter your password" required />
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-group text-center">
+                        <input type="submit" value="Login" class="btn btn-primary btn-block" />
+                    </div>
+                </form>
+
+                <!-- Create Account Link -->
+                <div class="text-center mt-3">
+                    <p>Don't have an account? <a href="@Url.Action("CreateAccount", "Account")">Create one</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Add Domiciliatione";
+}
+
+<h2>Add Domiciliatione</h2>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success">
+        @ViewBag.Message
+    </div>
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.Error
+    </div>
+}
+
+<form asp-action="AddDomiciliatione" method="post">
+    <div class="form-group">
+        <label for="idAdresseDomiciliation">Address:</label>
+        <select id="idAdresseDomiciliation" name="idAdresseDomiciliation" class="form-control" required>
+            <option value="">-- Select an Address --</option>
+            @foreach (var address in ViewBag.AvailableAddresses)
+            {
+                <option value="@address.Id">
+                    @address.Rue, @address.Ville, @address.Pays
+                </option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="DateDebut">Start Date:</label>
+        <input type="date" id="DateDebut" name="DateDebut" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="DateFin">End Date:</label>
+        <input type="date" id="DateFin" name="DateFin" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Domiciliatione</button>
+</form>

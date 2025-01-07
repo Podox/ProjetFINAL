@@ -1,0 +1,62 @@
+﻿@model Projet1.Models.Utilisateur
+@{
+    ViewData["Title"] = "createaccount";
+}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="text-center">Create Account</h2>
+                <form asp-action="CreateAccount" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <!-- Full Name Input -->
+                    <div class="form-group">
+                        <label asp-for="Nom" class="control-label">Full Name</label>
+                        <input asp-for="Nom" class="form-control" placeholder="Enter your full name" required />
+                        <span asp-validation-for="Nom" class="text-danger"></span>
+                    </div>
+
+                    <!-- Surname Input -->
+                    <div class="form-group">
+                        <label asp-for="Prenom" class="control-label">Surname</label>
+                        <input asp-for="Prenom" class="form-control" placeholder="Enter your surname" required />
+                        <span asp-validation-for="Prenom" class="text-danger"></span>
+                    </div>
+
+                    <!-- Email Input -->
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label">Email</label>
+                        <input asp-for="Email" class="form-control" placeholder="Enter your email" required />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <!-- Password Input -->
+                    <div class="form-group">
+                        <label asp-for="MotDePasse" class="control-label">Password</label>
+                        <input asp-for="MotDePasse" type="password" class="form-control" placeholder="Enter your password" required />
+                        <span asp-validation-for="MotDePasse" class="text-danger"></span>
+                    </div>
+
+                    <!-- Phone Number Input -->
+                    <div class="form-group">
+                        <label asp-for="Telephone" class="control-label">Phone Number</label>
+                        <input asp-for="Telephone" class="form-control" placeholder="Enter your phone number" required />
+                        <span asp-validation-for="Telephone" class="text-danger"></span>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-group text-center">
+                        <input type="submit" value="Create Account" class="btn btn-primary btn-block" />
+                    </div>
+                </form>
+
+                <!-- Login Link -->
+                <div class="text-center mt-3">
+                    <p>Already have an account? <a href="@Url.Action("Login", "Account")">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

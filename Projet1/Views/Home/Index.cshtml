@@ -1,0 +1,196 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Welcome-Hero Start -->
+<section id="home" class="welcome-hero">
+    <div class="container">
+        <div class="welcome-hero-txt">
+            <h2>Best place to find and explore <br> all that you need</h2>
+            <p>Find the best places, restaurants, hotels, real estate, and more in just one click.</p>
+        </div>
+       
+    </div>
+</section>
+<!-- Welcome-Hero End -->
+<!-- List-Topics Start -->
+<section id="list-topics" class="list-topics">
+    <div class="container">
+        <div class="list-topics-content">
+            <ul>
+                <li>
+                    <div class="single-list-topics-content">
+                        <div class="single-list-topics-icon">
+                            <i class="flaticon-restaurant"></i>
+                        </div>
+                        <h2><a asp-controller="Category" asp-action="Index" asp-route-category="restaurant">Restaurant</a></h2>
+                        <p>150 listings</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- List-Topics End -->
+<!-- How-It-Works Start -->
+<section id="works" class="works">
+    <div class="container">
+        <div class="section-header">
+            <h2>How It Works</h2>
+            <p>Learn more about how our website works</p>
+        </div>
+        <div class="works-content">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-how-works">
+                        <div class="single-how-works-icon">
+                            <i class="flaticon-lightbulb-idea"></i>
+                        </div>
+                        <h2><a href="#">Choose <span>What To</span> Do</a></h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed do eiusmod tempor incididunt ut labore magna aliqua.</p>
+                        <button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- How-It-Works End -->
+<!-- Explore Start -->
+<section id="explore" class="explore">
+    <div class="container">
+        <div class="section-header">
+            <h2>Explore</h2>
+            <p>Explore new places, food, culture around the world, and more.</p>
+        </div>
+        <div class="explore-content">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-explore-item">
+                        <div class="single-explore-img">
+                            <img src="@Url.Content("~/assets/images/explore/e1.jpg")" alt="explore image">
+                            <div class="single-explore-img-info">
+                                <button onclick="window.location.href='#'">Best Rated</button>
+                                <div class="single-explore-image-icon-box">
+                                    <ul>
+                                        <li><div class="single-explore-image-icon"><i class="fa fa-arrows-alt"></i></div></li>
+                                        <li><div class="single-explore-image-icon"><i class="fa fa-bookmark-o"></i></div></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-explore-txt bg-theme-1">
+                            <h2><a href="#">Tommy Helfinger Bar</a></h2>
+                            <p class="explore-rating-price">
+                                <span class="explore-rating">5.0</span> <a href="#">10 ratings</a>
+                                <span class="explore-price-box">From <span class="explore-price">$5-$300</span></span>
+                                <a href="#">Restaurant</a>
+                            </p>
+                            <div class="explore-person">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="explore-person-img">
+                                            <a href="#"><img src="@Url.Content("~/assets/images/explore/person.png")" alt="person"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="explore-open-close-part">
+                                <div class="row">
+                                    <div class="col-sm-5"><button class="close-btn" onclick="window.location.href='#'">Close Now</button></div>
+                                    <div class="col-sm-7">
+                                        <div class="explore-map-icon">
+                                            <a href="#"><i data-feather="map-pin"></i></a>
+                                            <a href="#"><i data-feather="upload"></i></a>
+                                            <a href="#"><i data-feather="heart"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Explore End -->
+<!--reviews start -->
+<section id="reviews" class="reviews">
+    <div class="section-header">
+        <h2>clients reviews</h2>
+        <p>What our client say about us</p>
+    </div><!--/.section-header-->
+    <div class="reviews-content">
+        <div class="testimonial-carousel">
+            <div class="single-testimonial-box">
+                <div class="testimonial-description">
+                    <div class="testimonial-info">
+                        <div class="testimonial-img">
+                            <img src="@Url.Content("~/assets/images/clients/c1.png")" alt="clients">
+                        </div><!--/.testimonial-img-->
+                        <div class="testimonial-person">
+                            <h2>Tom Leakar</h2>
+                            <h4>london, UK</h4>
+                            <div class="testimonial-person-star">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div><!--/.testimonial-person-->
+                    </div><!--/.testimonial-info-->
+                    <div class="testimonial-comment">
+                        <p>
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.
+                        </p>
+                    </div><!--/.testimonial-comment-->
+                </div><!--/.testimonial-description-->
+            </div><!--/.single-testimonial-box-->
+</section><!--/.reviews-->
+<!--reviews end -->
+<!-- statistics strat -->
+<section id="statistics" class="statistics">
+    <div class="container">
+        <div class="statistics-counter">
+            <div class="col-md-3 col-sm-6">
+                <div class="single-ststistics-box">
+                    <div class="statistics-content">
+                        <div class="counter">90 </div> <span>K+</span>
+                    </div><!--/.statistics-content-->
+                    <h3>listings</h3>
+                </div><!--/.single-ststistics-box-->
+            </div><!--/.col-->
+            <div class="col-md-3 col-sm-6">
+                <div class="single-ststistics-box">
+                    <div class="statistics-content">
+                        <div class="counter">40</div> <span>k+</span>
+                    </div><!--/.statistics-content-->
+                    <h3>listing categories</h3>
+                </div><!--/.single-ststistics-box-->
+            </div><!--/.col-->
+            <div class="col-md-3 col-sm-6">
+                <div class="single-ststistics-box">
+                    <div class="statistics-content">
+                        <div class="counter">65</div> <span>k+</span>
+                    </div><!--/.statistics-content-->
+                    <h3>visitors</h3>
+                </div><!--/.single-ststistics-box-->
+            </div><!--/.col-->
+            <div class="col-md-3 col-sm-6">
+                <div class="single-ststistics-box">
+                    <div class="statistics-content">
+                        <div class="counter">50</div> <span>k+</span>
+                    </div><!--/.statistics-content-->
+                    <h3>happy clients</h3>
+                </div><!--/.single-ststistics-box-->
+            </div><!--/.col-->
+        </div><!--/.statistics-counter-->
+    </div><!--/.container-->
+
+</section><!--/.counter-->
+<!-- statistics end -->
