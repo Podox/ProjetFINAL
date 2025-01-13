@@ -1,0 +1,33 @@
+﻿@model IEnumerable<dynamic>
+@{
+    ViewData["Title"] = "Liste des Adresses";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Liste des Adresses</h2>
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Rue</th>
+                <th>Ville</th>
+                <th>Code Postal</th>
+                <th>Pays</th>
+                <th>État</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var adresse in Model)
+            {
+                    <tr>
+                        <td>@adresse.Id</td>
+                        <td>@adresse.Rue</td>
+                        <td>@adresse.Ville</td>
+                        <td>@adresse.CodePostal</td>
+                        <td>@adresse.Pays</td>
+                        <td>@adresse.Etat</td>
+                    </tr>
+            }
+        </tbody>
+    </table>
+</div>

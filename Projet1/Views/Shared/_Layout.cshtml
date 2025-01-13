@@ -89,7 +89,13 @@
                                     <a class="nav-link" asp-controller="Entreprise" asp-action="AddEntreprise">Ajouter Une Entreprise</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" asp-controller="DisplayFacture" asp-action="Index">Voire Facture</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" asp-controller="Domiciliatione" asp-action="AddDomiciliatione">Faire une Demande</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="DispAdresse" asp-action="Index">Voire Les Adresses</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" asp-controller="Dashboard" asp-action="Index">Dasboard</a>
@@ -163,10 +169,17 @@
                                     <a class="nav-link" asp-controller="Domiciliatione" asp-action="AddDomiciliatione">Faire une Demande</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" asp-controller="DisplayFacture" asp-action="Index">Voire Facture</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="DispAdresse" asp-action="Index">Voire Les Adresses</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" asp-controller="Dashboard" asp-action="Index">Dasboard</a>
                                 </li>
-
                             }
+                              
+                              
                             else if (Context.Session.GetString("UserEmail") == null)
                             {
                                 <li class="scroll"><a href="#works">Comment ça marche</a></li>
