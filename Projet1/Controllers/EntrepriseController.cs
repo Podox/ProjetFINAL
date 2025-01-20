@@ -18,6 +18,27 @@ namespace Projet1.Controllers
         // Get the page to add entreprise
         public IActionResult AddEntreprise()
         {
+            // Get the current user ID from session
+            var userIdString = HttpContext.Session.GetString("UserId");
+
+            if (userIdString != null)
+            {
+                int userId = int.Parse(userIdString);
+
+                // Check if the user already has an EntrepriseUId assigned
+                var utilisateur = _context.Utilisateur.FirstOrDefault(u => u.Id == userId);
+                if (utilisateur != null && utilisateur.EntrepriseUId != null)
+                {
+                    // Redirect to a page informing the user
+                    return RedirectToAction("EntrepriseAssigned");
+                }
+            }
+            else
+            {
+                // If user ID is not found in session, redirect to login
+                return RedirectToAction("Login", "Account");
+            }
+
             return View();
         }
 
@@ -30,6 +51,14 @@ namespace Projet1.Controllers
             if (userIdString != null)
             {
                 int userId = int.Parse(userIdString);
+
+                // Check if the user already has an EntrepriseUId assigned
+                var utilisateur = _context.Utilisateur.FirstOrDefault(u => u.Id == userId);
+                if (utilisateur != null && utilisateur.EntrepriseUId != null)
+                {
+                    // Redirect to a page informing the user
+                    return RedirectToAction("EntrepriseAssigned");
+                }
 
                 // Create a new Entreprise instance and set properties
                 var newEntreprise = new Entreprise
@@ -44,8 +73,7 @@ namespace Projet1.Controllers
                     _context.Entreprise.Add(newEntreprise);
                     _context.SaveChanges(); // This generates the ID for newEntreprise
 
-                    // Retrieve the current user and associate the new Entreprise with the user
-                    var utilisateur = _context.Utilisateur.FirstOrDefault(u => u.Id == userId);
+                    // Associate the new Entreprise with the current user
                     if (utilisateur != null)
                     {
                         utilisateur.EntrepriseUId = newEntreprise.Id; // Use the generated ID
@@ -71,6 +99,11 @@ namespace Projet1.Controllers
             return View();
         }
 
-
+        // Action for the page informing the user they already have an enterprise assigned
+        public IActionResult EntrepriseAssigned()
+        {
+            ViewBag.Message = "Vous avez déjà une entreprise assignée.";
+            return View();
+        }
     }
 }

@@ -59,7 +59,7 @@
                                 <span>
                                     @if (facture.MontantTotal.HasValue)
                                     {
-                                        @facture.MontantTotal.Value.ToString("C")
+                                        @facture.MontantTotal.Value.ToString("C").Replace("€", "MAD")
                                     }
                                     else
                                     {

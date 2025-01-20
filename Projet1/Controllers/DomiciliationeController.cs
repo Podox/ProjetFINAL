@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Projet1.Models;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http; // For session handling
 using System.Linq;
 using System;
 using Projet1.Data;
@@ -19,6 +19,29 @@ namespace Projet1.Controllers
         // GET: Show the Add Domiciliatione page
         public IActionResult AddDomiciliatione()
         {
+            // Get the current user ID from session
+            var userIdString = HttpContext.Session.GetString("UserId");
+
+            if (userIdString != null)
+            {
+                int userId = int.Parse(userIdString);
+
+                // Check if the user is already assigned to a Domiciliatione
+                var existingDomiciliatione = _context.Domiciliatione
+                    .FirstOrDefault(d => d.idUtilisateur == userId);
+
+                if (existingDomiciliatione != null)
+                {
+                    // Redirect to a page informing the user
+                    return RedirectToAction("DomiciliationeAlreadyExists");
+                }
+            }
+            else
+            {
+                // If user ID is not found in session, redirect to login
+                return RedirectToAction("Login", "Account");
+            }
+
             // Fetch addresses with etat = 1 to populate the dropdown
             var availableAddresses = _context.Adresse.Where(a => a.etat == 1).ToList();
             ViewBag.AvailableAddresses = availableAddresses;
@@ -35,6 +58,16 @@ namespace Projet1.Controllers
             if (userIdString != null)
             {
                 int userId = int.Parse(userIdString);
+
+                // Check if the user is already assigned to a Domiciliatione
+                var existingDomiciliatione = _context.Domiciliatione
+                    .FirstOrDefault(d => d.idUtilisateur == userId);
+
+                if (existingDomiciliatione != null)
+                {
+                    // Redirect to a page informing the user
+                    return RedirectToAction("DomiciliationeAlreadyExists");
+                }
 
                 try
                 {
@@ -81,6 +114,13 @@ namespace Projet1.Controllers
             ViewBag.AvailableAddresses = availableAddresses;
 
             // Return the same view
+            return View();
+        }
+
+        // Action for the page informing the user they already have a Domiciliatione assigned
+        public IActionResult DomiciliationeAlreadyExists()
+        {
+            ViewBag.Message = "Vous avez déjà fait une demande de domiciliation.";
             return View();
         }
     }

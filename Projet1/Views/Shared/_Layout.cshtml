@@ -68,7 +68,7 @@
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <a class="navbar-brand" asp-controller="Home" asp-action="Index">list<span>race</span></a>
+                        <a class="navbar-brand" asp-controller="Home" asp-action="Index">Domici<span>liation</span></a>
                     </div><!--/.navbar-header-->
                     <!-- End Header Navigation -->
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -89,16 +89,19 @@
                                     <a class="nav-link" asp-controller="Entreprise" asp-action="AddEntreprise">Ajouter Une Entreprise</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-controller="DisplayFacture" asp-action="Index">Voire Facture</a>
+                                    <a class="nav-link" asp-controller="DisplayFacture" asp-action="Index">Facture</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" asp-controller="Domiciliatione" asp-action="AddDomiciliatione">Faire une Demande</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-controller="DispAdresse" asp-action="Index">Voire Les Adresses</a>
+                                    <a class="nav-link" asp-controller="DispAdresse" asp-action="Index">Adresses</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" asp-controller="Dashboard" asp-action="Index">Dasboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Utilisateur" asp-action="Edit">Changer Information</a>
                                 </li>
 
                                 }
@@ -146,12 +149,11 @@
                 <div class="row">
                     <div class="col-sm-3">
                         <div class="navbar-header">
-                            <a class="navbar-brand" asp-controller="Home" asp-action="Index">list<span>race</span></a>
+                            <a class="navbar-brand" asp-controller="Home" asp-action="Index">Domici<span>liation</span></a>
                         </div><!--/.navbar-header-->
                     </div>
                     <div class="col-sm-9">
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-
 
                             @if (Context.Session.GetString("UserEmail") != null)
                             {
@@ -166,20 +168,22 @@
                                     <a class="nav-link" asp-controller="Entreprise" asp-action="AddEntreprise">Ajouter Une Entreprise</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" asp-controller="DisplayFacture" asp-action="Index">Facture</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" asp-controller="Domiciliatione" asp-action="AddDomiciliatione">Faire une Demande</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-controller="DisplayFacture" asp-action="Index">Voire Facture</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-controller="DispAdresse" asp-action="Index">Voire Les Adresses</a>
+                                    <a class="nav-link" asp-controller="DispAdresse" asp-action="Index">Adresses</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" asp-controller="Dashboard" asp-action="Index">Dasboard</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Utilisateur" asp-action="Edit">Changer Information</a>
+                                </li>
+
                             }
-                              
-                              
                             else if (Context.Session.GetString("UserEmail") == null)
                             {
                                 <li class="scroll"><a href="#works">Comment ça marche</a></li>
